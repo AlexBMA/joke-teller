@@ -18,6 +18,7 @@ async function getJokes() {
     const response = await fetch(apiUrl);
     const data = await response.json();
     const joke = data.joke;
+    buttonSayTheInput.hidden = true;
     button.hidden = true;
 
     sayTheText(joke);
@@ -41,12 +42,15 @@ function sayTheText(text) {
 
 function toogleButton() {
   button.hidden = false;
+  buttonSayTheInput.hidden = false;
 }
 
 function sayTheTextButton() {
   const text = inputText.value;
   if (text !== null && text.trim().length > 0) {
     sayTheText(text);
+    buttonSayTheInput.hidden = true;
+    button.hidden = true;
   }
 }
 
