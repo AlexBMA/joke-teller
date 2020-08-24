@@ -44,9 +44,14 @@ button:active{
   transform:scale(0.98);
 }
 
-butoon:disabled{
+button:disabled{
   cursor: default;
   filter: brightness(30%);
+}
+
+#textInput{
+  font-size: 20px;
+  width: 200px;
 }
 
 
