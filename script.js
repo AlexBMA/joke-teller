@@ -1,6 +1,6 @@
 'use strict';
 
-import { apikey } from './config.js';
+import {apikey, jokesApiURL} from './config.js';
 
 import {voiceRSS} from './utils/voice.js'
 
@@ -12,8 +12,7 @@ const APIKEY = apikey;
 const button = document.getElementById('button');
 const audioElement = document.getElementById('audioElement');
 
-const apiUrl =
-  'https://sv443.net/jokeapi/v2/joke/Programming?blacklistFlags=nsfw,religious,political,racist,sexist&type=single';
+const apiUrl = jokesApiURL;
 
 async function getJokes() {
   try {
