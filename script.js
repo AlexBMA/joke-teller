@@ -20,6 +20,7 @@ async function getJokes() {
     const joke = data.joke;
     buttonSayTheInput.hidden = true;
     button.hidden = true;
+    inputText.hidden = true;
 
     sayTheText(joke);
   } catch (error) {
@@ -43,6 +44,7 @@ function sayTheText(text) {
 function toogleButton() {
   button.hidden = false;
   buttonSayTheInput.hidden = false;
+  inputText.hidden = false;
 }
 
 function sayTheTextButton() {
@@ -51,6 +53,7 @@ function sayTheTextButton() {
     sayTheText(text);
     buttonSayTheInput.hidden = true;
     button.hidden = true;
+    inputText.hidden = true;
   }
 }
 
