@@ -53,6 +53,8 @@ button:disabled {
   font-size: 20px;
   width: 200px;
   padding: 10px;
+  border-radius: 5px;
+  border: none;
 }
 
 /* Media Query: Tablet or Smaller */

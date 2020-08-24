@@ -10,6 +10,7 @@ const button = document.getElementById('button');
 const audioElement = document.getElementById('audioElement');
 const buttonSayTheInput = document.getElementById('sayText');
 const inputText = document.getElementById('textInput');
+const h4 = document.getElementById('message');
 
 const apiUrl = jokesApiURL;
 
@@ -18,14 +19,20 @@ async function getJokes() {
     const response = await fetch(apiUrl);
     const data = await response.json();
     const joke = data.joke;
-    buttonSayTheInput.hidden = true;
-    button.hidden = true;
-    inputText.hidden = true;
+    hideHtmlElem();
 
     sayTheText(joke);
   } catch (error) {
     console.log('Whoops', error);
   }
+  
+}
+
+function hideHtmlElem() {
+    buttonSayTheInput.hidden = true;
+    button.hidden = true;
+    inputText.hidden = true;
+    h4.hidden = true;
 }
 
 function sayTheText(text) {
@@ -51,9 +58,10 @@ function sayTheTextButton() {
   const text = inputText.value;
   if (text !== null && text.trim().length > 0) {
     sayTheText(text);
-    buttonSayTheInput.hidden = true;
-    button.hidden = true;
-    inputText.hidden = true;
+    hideHtmlElem();
+  } else{
+    h4.hidden = false;
+    h4.innerText = 'Put something valid';
   }
 }
 
