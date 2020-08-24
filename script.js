@@ -1,10 +1,7 @@
 'use strict';
 
 import {apikey, jokesApiURL} from './config.js';
-
 import {voiceRSS} from './utils/voice.js'
-
-// VoiceRSS Javascript SDK
 
 const VoiceRSS = voiceRSS;
 const APIKEY = apikey;
